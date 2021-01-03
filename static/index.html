@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socket</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Hello From Web Socket Page</h1>
+        Create Room: <input type="text" id="roomID">
+        <button onclick="createRoomID()">Submit</button>
+        Join Room: <input type="text" id="joinRoomID">
+        <button onclick="joinRoomID()">Submit</button>
+    </div>
+    <div class="chat_window" id="chatWindow" style="visibility: hidden;">
+        <div class="top_menu">
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+            <div class="title">Chat</div>
+        </div>
+        <ul class="messages" id="messages-list"></ul>
+        <div class="bottom_wrapper clearfix">
+            <div class="message_input_wrapper">
+                <input id="messageInput" class="message_input" placeholder="Type your message here..." />
+            </div>
+            <div class="send_message">
+                <div class="icon"></div>
+                <div class="text" onclick="sendMessage()">Send</div>
+            </div>
+        </div>
+    </div>
+    <div class="message_template">
+        <li class="message">
+            <div class="avatar"></div>
+            <div class="text_wrapper">
+                <div class="text"></div>
+            </div>
+        </li>
+    </div>
+    <div>
+        <button id="recordAudio" onmousedown="getAudio()" onmouseout="stopAudio()">Recording</button>
+        <button id="playAudio" onclick="playAudio()" style="visibility: hidden;">Play audio</button>
+    </div>
+</body>
+
+<script src="main.js"></script>
+
+</html>
